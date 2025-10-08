@@ -1,0 +1,42 @@
+/* .posterImage {
+  height: 700px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+} */
+
+.posterImage {
+  position: relative;
+  height: 700px;
+}
+
+.posterImage img {
+  display: block;
+}
+
+.posterImage_overlay {
+  position: absolute;
+  bottom: 0;
+  background-image: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 1));
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+  padding: 50px;
+  justify-content: flex-start;
+}
+.movieRuntime {
+  display: flex;
+  gap: 30px;
+  font-size: 2rem;
+}
+.movieTitle {
+  font-size: 4rem;
+  font-weight: 800;
+}
+.movieDescryption {
+  width: 50%;
+  font-style: italic;
+  font-size: 1.4rem;
+}
