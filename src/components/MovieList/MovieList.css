@@ -1,0 +1,17 @@
+.movieList {
+  display: flex;
+  flex-direction: column;
+  padding: 0 3rem 3rem 3rem;
+  gap: 20px;
+}
+
+.listTitle {
+  font-size: 1.75rem;
+  margin: 2.5rem;
+}
+
+.listCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
