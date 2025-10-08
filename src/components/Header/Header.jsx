@@ -13,7 +13,7 @@ function Header() {
             alt=""
           />
         </Link>
-        <Link to={"/movie/film"}>Top Movies</Link>
+        <Link to={"/movie/movie"}>Top Movies</Link>
         <Link to={"/movie/tv"}>Top TV Serials</Link>
       </div>
     </div>

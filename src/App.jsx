@@ -2,7 +2,8 @@ import React from "react";
 import { Route, Routes } from "react-router";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
-import Card from "./components/Card/Card";
+import MovieList from "./components/MovieList/MovieList";
+import MovieDetail from "./pages/MovieDetail/MovieDetail";
 
 function App() {
   return (
@@ -10,8 +11,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/movies/:id" element={<h1>Movie ID</h1>} />
-        <Route path="/movie/:type" element={<Card />} />
+        <Route path="/movies/:id" element={<MovieDetail/>} />
+        <Route path="/movie/:type" element={<MovieList />} />
       </Routes>
     </div>
   );

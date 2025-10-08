@@ -9,12 +9,14 @@ function Card({ movie }) {
         <img
           className="cardImage"
           src={`https://image.tmdb.org/t/p/original${
-            movie && movie.backdrop_path
+            movie && movie.poster_path
           }`}
           alt=""
         />
         <div className="cardOverlay">
-          <div className="cardTitle">{movie && movie.original_title}</div>
+          <div className="cardTitle">
+            {(movie && movie.original_title) || movie.original_name}
+          </div>
           <div className="cardRuntime">
             {movie && movie.release_date}
             <span className="cardRating">
@@ -23,7 +25,7 @@ function Card({ movie }) {
             </span>
           </div>
           <div className="movieDescryptionCard">
-            <p>{movie && movie.overview}</p>
+            <p>{movie && movie.overview.slice(0,100)+ '...'}</p>
           </div>
         </div>
       </div>

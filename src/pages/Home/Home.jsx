@@ -18,7 +18,7 @@ function Home() {
   }
   useEffect(() => {
     fetchData();
-    console.log(posterData);
+    // console.log(posterData);
   }, []);
   return (
     <div className="poster">
