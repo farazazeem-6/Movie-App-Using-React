@@ -3,6 +3,7 @@ import "./Home.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router";
+import MovieList from "../../components/MovieList/MovieList";
 
 const API_KEY = "eb31ecd91caa563e9f848294609836f8";
 
@@ -57,8 +58,8 @@ function Home() {
                 <div className="movieRuntime">
                   {movie && movie.release_date}
                   <span>
-                    {movie && movie.vote_average}{" "}
-                    <i class="fa-solid fa-star"></i>
+                    {movie && movie.vote_average}
+                    <i className="fa-solid fa-star"></i>
                   </span>
                 </div>
                 <div className="movieDescryption">
@@ -69,6 +70,8 @@ function Home() {
           </Link>
         ))}
       </Carousel>
+
+      <MovieList />
     </div>
   );
 }
