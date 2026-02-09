@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Card from "../Card/Card";
-import './MovieList.css'
+import "./MovieList.css";
 
-const API_KEY = "eb31ecd91caa563e9f848294609836f8";
+const API_KEY_URL = import.meta.env.VITE_API_KEY;
 
 function MovieList() {
   const [movieList, setMovieList] = useState([]);
@@ -13,7 +13,7 @@ function MovieList() {
     fetch(
       `https://api.themoviedb.org/3/discover/${
         type ? type : "movie"
-      }?api_key=${API_KEY}&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc`
+      }?api_key=${API_KEY_URL}&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc`,
     )
       .then((resolve) => resolve.json())
       .then((data) => setMovieList(data.results));
@@ -38,5 +38,4 @@ function MovieList() {
     </div>
   );
 }
-
 export default MovieList;

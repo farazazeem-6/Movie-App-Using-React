@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import "./Home.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
@@ -18,7 +18,6 @@ function Home() {
   }
   useEffect(() => {
     fetchData();
-    // console.log(posterData);
   }, []);
   return (
     <div className="poster">
@@ -48,7 +47,7 @@ function Home() {
                   width: "100%",
                   height: "700px",
                   objectFit: "cover",
-                  objectPosition: "center 30%", // Adjust this to control cropping
+                  objectPosition: "center 30%",
                 }}
               />
               <div className="posterImage_overlay">
@@ -70,7 +69,6 @@ function Home() {
           </Link>
         ))}
       </Carousel>
-
       <MovieList />
     </div>
   );
