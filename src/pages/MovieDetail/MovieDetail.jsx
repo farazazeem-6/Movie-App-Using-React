@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import './MovieDetail.css'
+import "./MovieDetail.css";
 
-const API_KEY = "eb31ecd91caa563e9f848294609836f8";
+const API_KEY_URL = import.meta.env.VITE_API_KEY;
 const dummyApi =
   "https://api.themoviedb.org/3/movie/1061474?api_key=eb31ecd91caa563e9f848294609836f8&language=en-US";
 
@@ -14,7 +14,7 @@ function MovieDetail() {
 
   async function fetchDetails(id) {
     let response = await fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY_URL}&language=en-US`,
     );
     if (response.ok) {
       const data = await response.json();
@@ -25,7 +25,7 @@ function MovieDetail() {
     }
 
     response = await fetch(
-      `https://api.themoviedb.org/3/tv/${id}?api_key=${API_KEY}&language=en-US`
+      `https://api.themoviedb.org/3/tv/${id}?api_key=${API_KEY}&language=en-US`,
     );
     if (response.ok) {
       const data = await response.json();
@@ -71,7 +71,8 @@ function MovieDetail() {
               {details ? details.tagline : ""}
             </div>
             <div className="movie__rating">
-              {details ? details.vote_average : ""} <i className="fas fa-star" />
+              {details ? details.vote_average : ""}{" "}
+              <i className="fas fa-star" />
               <span className="movie__voteCount">
                 {details ? "(" + details.vote_count + ") votes" : ""}
               </span>

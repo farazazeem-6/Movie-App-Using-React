@@ -1,20 +1,10 @@
-/* .posterImage {
-  height: 700px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-} */
-
 .posterImage {
   position: relative;
   height: 700px;
 }
-
 .posterImage img {
   display: block;
 }
-
 .posterImage_overlay {
   position: absolute;
   bottom: 0;
