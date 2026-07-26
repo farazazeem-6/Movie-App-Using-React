@@ -1,5 +1,6 @@
 import "./Header.css";
 import { Link } from "react-router";
+import { TOP_MOVIES, TOP_TV_SERIALS, MOVIE_TYPE, TV_TYPE } from "../../constants/message";
 
 function Header() {
   return (
@@ -12,8 +13,8 @@ function Header() {
             alt=""
           />
         </Link>
-        <Link to={"/movie/movie"}>Top Movies</Link>
-        <Link to={"/movie/tv"}>Top TV Serials</Link>
+        <Link to={`/movie/${MOVIE_TYPE}`}>{TOP_MOVIES}</Link>
+        <Link to={`/movie/${TV_TYPE}`}>{TOP_TV_SERIALS}</Link>
       </div>
     </div>
   );

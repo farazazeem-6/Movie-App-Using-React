@@ -1,0 +1,9 @@
+export const API_KEY_URL = import.meta.env.VITE_API_KEY;
+export const NO_MATCHING_MOVIE_OR_TV = "No matching movie or TV show found";
+export const RELEASE_DATE_PREFIX = "Release date: ";
+export const SYNOPSIS = "Synopsis";
+export const TOP_MOVIES = "Top Movies";
+export const TOP_TV_SERIALS = "Top TV Serials";
+export const DEFAULT_MOVIES_TITLE = "MOVIES";
+export const MOVIE_TYPE = "movie";
+export const TV_TYPE = "tv";
