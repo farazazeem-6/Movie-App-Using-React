@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import "./MovieDetail.css";
+import {
+  MOVIE_TYPE,
+  TV_TYPE,
+  RELEASE_DATE_PREFIX,
+  SYNOPSIS,
+  NO_MATCHING_MOVIE_OR_TV,
+  API_KEY_URL,
+} from "../../constants/message";
 
-const API_KEY_URL = import.meta.env.VITE_API_KEY;
 const dummyApi =
   "https://api.themoviedb.org/3/movie/1061474?api_key=eb31ecd91caa563e9f848294609836f8&language=en-US";
 
@@ -18,23 +25,23 @@ function MovieDetail() {
     );
     if (response.ok) {
       const data = await response.json();
-      setType("movie");
+      setType(MOVIE_TYPE);
       setDetails(data);
       console.log(details);
       return;
     }
 
     response = await fetch(
-      `https://api.themoviedb.org/3/tv/${id}?api_key=${API_KEY}&language=en-US`,
+      `https://api.themoviedb.org/3/tv/${id}?api_key=${API_KEY_URL}&language=en-US`,
     );
     if (response.ok) {
       const data = await response.json();
-      setType("tv");
+      setType(TV_TYPE);
       setDetails(data);
       console.log(details);
       return;
     }
-    console.error("No matching movie or TV show found");
+    console.error(NO_MATCHING_MOVIE_OR_TV);
   }
 
   useEffect(() => {
@@ -81,7 +88,7 @@ function MovieDetail() {
               {details ? details.runtime + " mins" : ""}
             </div>
             <div className="movie__releaseDate">
-              {details ? "Release date: " + details.release_date : ""}
+              {details ? `${RELEASE_DATE_PREFIX}${details.release_date}` : ""}
             </div>
             <div className="movie__genres">
               {details && details.genres
@@ -96,7 +103,7 @@ function MovieDetail() {
             </div>
           </div>
           <div className="movie__detailRightBottom">
-            <div className="synopsisText">Synopsis</div>
+            <div className="synopsisText">{SYNOPSIS}</div>
             <div>{details ? details.overview : ""}</div>
           </div>
         </div>
